@@ -7,7 +7,10 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'this-really-needs-to-be-changed'
-    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    # SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    SQLALCHEMY_DATABASE_URI =\
+        "postgresql+psycopg2://wordcount_dev:wordcount_dev@" \
+        "localhost:5432/wordcount_dev"
 
 
 class ProductionConfig(Config):
